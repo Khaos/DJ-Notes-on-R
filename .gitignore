@@ -1,0 +1,5 @@
+recycle
+tmp
+test
+source/*.*
+!source/*.lyx
