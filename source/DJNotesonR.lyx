@@ -2,7 +2,7 @@
 \lyxformat 345
 \begin_document
 \begin_header
-\textclass DJCTeXSweaveART
+\textclass DJpgfSweaveART
 \use_default_options true
 \language british
 \inputencoding auto
@@ -36,6 +36,7 @@
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
+\author "" 
 \author "" 
 \end_header
 
@@ -95,6 +96,303 @@ R is a powerful and free programming software or statistical computing and
 
 \begin_layout Section
 Data Structures
+\end_layout
+
+\begin_layout Standard
+Everything in R is an object.
+ The followings are some basic classes.
+\end_layout
+
+\begin_layout Itemize
+vector - `atomic' structure, 
+\emph on
+mode
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+numeric
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+double
+\end_layout
+
+\begin_layout Itemize
+integer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+character
+\end_layout
+
+\begin_layout Itemize
+logical
+\end_layout
+
+\begin_layout Itemize
+complex
+\end_layout
+
+\begin_layout Itemize
+raw
+\end_layout
+
+\begin_layout Itemize
+missing values
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+matrices
+\end_layout
+
+\begin_layout Itemize
+factors
+\end_layout
+
+\begin_layout Itemize
+lists
+\end_layout
+
+\begin_layout Itemize
+data frames
+\end_layout
+
+\begin_layout Itemize
+functions and expression
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Objects
+\end_layout
+
+\begin_layout Section
+Commonly Used command
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<helpCommand>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+help(solve)
+\end_layout
+
+\begin_layout Plain Layout
+
+?solve
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Section
+Test
+\end_layout
+
+\begin_layout Subsection
+A First Try
+\end_layout
+
+\begin_layout Standard
+The first example:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<myFirstChunkInLyX1>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+xObs <- 100; xMean <- 10; xVar <- 9
+\end_layout
+
+\begin_layout Plain Layout
+
+x <- rnorm(n=xObs, mean=xMean, sd=sqrt(xVar))
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The Second example
+\end_layout
+
+\begin_layout RScrap
+<<myFirstChunkInLyx2,fig=TRUE>>=
+\end_layout
+
+\begin_layout RScrap
+library(MASS)
+\end_layout
+
+\begin_layout RScrap
+x <- rnorm(1000)
+\end_layout
+
+\begin_layout RScrap
+y <- rnorm(1000)
+\end_layout
+
+\begin_layout RScrap
+truehist(c(x,y+3), nbins=25)
+\end_layout
+
+\begin_layout RScrap
+@
+\end_layout
+
+\begin_layout Plain Layout
+Another exmaple
+\end_layout
+
+\begin_layout RScrap
+<<rnorm,fig=TRUE>>=
+\end_layout
+
+\begin_layout RScrap
+rnorm(10)
+\end_layout
+
+\begin_layout RScrap
+plot(rnorm(25), pch=1:25, main='Title', xlab='$
+\backslash
+
+\backslash
+alpha + 
+\backslash
+
+\backslash
+beta$', ylab='$
+\backslash
+
+\backslash
+gamma$')
+\end_layout
+
+\begin_layout RScrap
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Final exmaple
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<corrplottest01,fig=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+library(corrplot)
+\end_layout
+
+\begin_layout Plain Layout
+
+data(mtcars) 
+\end_layout
+
+\begin_layout Plain Layout
+
+corr <- cor(mtcars) 
+\end_layout
+
+\begin_layout Plain Layout
+
+corrplot(corr, method="circle", order = "PCA")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Section*
+Dump
 \end_layout
 
 \end_body
